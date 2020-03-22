@@ -8,64 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1048883308355:android:37eb8749ba61631ce331f6",
-        "android_client_info": {
-          "package_name": "com.blackhole.chat_app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1048883308355-pscslgm2lru9ufm72fiab227d4clje3p.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDyyfLZUhpbhBhaEpvFtN8f2sC6NTlHJBA"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1048883308355-pscslgm2lru9ufm72fiab227d4clje3p.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1048883308355:android:83f15be35cbbb52fe331f6",
-        "android_client_info": {
-          "package_name": "com.codingwithflutter.firebase_auth_demo_flutter"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1048883308355-pscslgm2lru9ufm72fiab227d4clje3p.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDyyfLZUhpbhBhaEpvFtN8f2sC6NTlHJBA"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1048883308355-pscslgm2lru9ufm72fiab227d4clje3p.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:1048883308355:android:895cd4e5f3388193e331f6",
         "android_client_info": {
           "package_name": "com.ducksinarowza"
@@ -88,6 +30,13 @@
             {
               "client_id": "1048883308355-pscslgm2lru9ufm72fiab227d4clje3p.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1048883308355-07cr0a3nam779avlq4qnvdialee0gpfo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wardslaus"
+              }
             }
           ]
         }
@@ -117,6 +66,13 @@
             {
               "client_id": "1048883308355-pscslgm2lru9ufm72fiab227d4clje3p.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1048883308355-07cr0a3nam779avlq4qnvdialee0gpfo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wardslaus"
+              }
             }
           ]
         }
@@ -124,9 +80,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1048883308355:android:e634e2fba1597da0e331f6",
+        "mobilesdk_app_id": "1:1048883308355:android:efc7b77c9fb0d6b2e331f6",
         "android_client_info": {
-          "package_name": "kimlangholz.momentum"
+          "package_name": "com.wardslaus"
         }
       },
       "oauth_client": [
@@ -146,6 +102,13 @@
             {
               "client_id": "1048883308355-pscslgm2lru9ufm72fiab227d4clje3p.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1048883308355-07cr0a3nam779avlq4qnvdialee0gpfo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wardslaus"
+              }
             }
           ]
         }
