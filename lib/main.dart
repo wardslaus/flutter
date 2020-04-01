@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:wardslaus/app/auth_widget_builder.dart';
 import 'package:wardslaus/app/email_link_error_presenter.dart';
 import 'package:wardslaus/app/auth_widget.dart';
+import 'package:wardslaus/pages/app_theme.dart';
 import 'package:wardslaus/services/apple_sign_in_available.dart';
 import 'package:wardslaus/services/auth_service.dart';
 import 'package:wardslaus/services/auth_service_adapter.dart';
@@ -14,15 +15,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:wardslaus/services/service_locator.dart';
-import 'file:///C:/Android/Live/wardslaus/lib/pages/app_theme.dart';
+
 Future<void> main() async {
   // Fix for: Unhandled Exception: ServicesBinding.defaultBinaryMessenger was accessed before the binding was initialized.
   WidgetsFlutterBinding.ensureInitialized();
   final appleSignInAvailable = await AppleSignInAvailable.check();
   setupLocator();
-  await SystemChrome.setPreferredOrientations(<DeviceOrientation>[DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
-      .then((_) => runApp(MyApp(appleSignInAvailable: appleSignInAvailable)));
- //  runApp(MyApp(appleSignInAvailable: appleSignInAvailable));
+  await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown
+  ]).then((_) => runApp(MyApp(appleSignInAvailable: appleSignInAvailable)));
+  //  runApp(MyApp(appleSignInAvailable: appleSignInAvailable));
 }
 
 class MyApp extends StatelessWidget {
@@ -39,7 +42,8 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
-      statusBarBrightness: Platform.isAndroid ? Brightness.dark : Brightness.light,
+      statusBarBrightness:
+          Platform.isAndroid ? Brightness.dark : Brightness.light,
       systemNavigationBarColor: Colors.white,
       systemNavigationBarDividerColor: Colors.grey,
       systemNavigationBarIconBrightness: Brightness.dark,

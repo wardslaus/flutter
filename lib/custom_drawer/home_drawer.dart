@@ -1,9 +1,9 @@
-import 'file:///C:/Android/Live/wardslaus/lib/pages/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wardslaus/common_widgets/platform_alert_dialog.dart';
 import 'package:wardslaus/common_widgets/platform_exception_alert_dialog.dart';
 import 'package:wardslaus/constants/strings.dart';
+import 'package:wardslaus/pages/app_theme.dart';
 import 'package:wardslaus/services/auth_service.dart';
 import 'package:flutter/services.dart';
 
@@ -66,6 +66,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
       ),
     ];
   }
+
   Future<void> _signOut(BuildContext context) async {
     try {
       final AuthService auth = Provider.of<AuthService>(context, listen: false);
@@ -77,6 +78,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
       ).show(context);
     }
   }
+
   Future<void> _confirmSignOut(BuildContext context) async {
     final bool didRequestSignOut = await PlatformAlertDialog(
       title: Strings.logout,
@@ -88,6 +90,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
       _signOut(context);
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -194,7 +197,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   Icons.power_settings_new,
                   color: Colors.red,
                 ),
-                onTap:  () => _confirmSignOut(context),
+                onTap: () => _confirmSignOut(context),
               ),
               SizedBox(
                 height: MediaQuery.of(context).padding.bottom,
