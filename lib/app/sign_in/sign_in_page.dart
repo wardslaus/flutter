@@ -114,108 +114,107 @@ class SignInPage extends StatelessWidget {
       onSignedIn: navigator.pop,
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 2.0,
-        title: Text(title),
-      ),
-      // Hide developer menu while loading in progress.
-      // This is so that it's not possible to switch auth service while a request is in progress
-      drawer: isLoading ? null : DeveloperMenu(),
+
+      body: _buildSignIn(context)
+
+
+
+
+    );
+  }
+/*  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
       backgroundColor: Colors.grey[200],
       body: _buildSignIn(context),
     );
-  }
+  }*/
 
-  Widget _buildHeader() {
-    if (isLoading) {
-      return Center(
-        child: CircularProgressIndicator(),
-      );
-    }
-    return Text(
-      Strings.signIn,
-      textAlign: TextAlign.center,
-      style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.w600),
-    );
-  }
+
 
   Widget _buildSignIn(BuildContext context) {
     final appleSignInAvailable = Provider.of<AppleSignInAvailable>(context);
     // Make content scrollable so that it fits on small screens
     return SingleChildScrollView(
+
       child: Container(
-        padding: EdgeInsets.all(16.0),
+
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+
           children: <Widget>[
-            SizedBox(height: 32.0),
-            SizedBox(
-              height: 50.0,
-              child: _buildHeader(),
-            ),
-            SizedBox(height: 32.0),
-            if (appleSignInAvailable.isAvailable) ...[
-              AppleSignInButton(
-                // TODO: add key when supported
-                style: ButtonStyle.black,
-                type: ButtonType.signIn,
-                onPressed: isLoading ? null : () => _signInWithApple(context),
+
+
+            new Card(
+              color: Colors.grey[100],
+              margin: new EdgeInsets.only(
+                  left: 20.0, right: 20.0, top: 150.0, bottom: 80.0),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0)),
+              elevation: 8.0,
+              child: new Padding(
+              padding: new EdgeInsets.all(25.0),
+                child: Column(
+
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    ClipRRect(
+                      borderRadius: new BorderRadius.circular(48.0),
+                      child: Image(
+                        fit: BoxFit.fill,
+                        image: AssetImage('assets/logo.png'),
+                        width: 200.0,
+
+                      ),
+                    ),
+                    SizedBox(height: 32.0),
+                    if (appleSignInAvailable.isAvailable) ...[
+                      AppleSignInButton(
+                        // TODO: add key when supported
+                        style: ButtonStyle.black,
+                        type: ButtonType.signIn,
+                        onPressed: isLoading ? null : () => _signInWithApple(context),
+                      ),
+                      SizedBox(height: 8),
+                    ],
+                    SocialSignInButton(
+                      key: googleButtonKey,
+                      assetName: 'assets/go-logo.png',
+                      text: Strings.signInWithGoogle,
+                      onPressed: isLoading ? null : () => _signInWithGoogle(context),
+                      color: Colors.white,
+                    ),
+                    SizedBox(height: 8),
+                    SocialSignInButton(
+                      key: facebookButtonKey,
+                      assetName: 'assets/fb-logo.png',
+                      text: Strings.signInWithFacebook,
+                      textColor: Colors.white,
+                      onPressed: isLoading ? null : () => _signInWithFacebook(context),
+                      color: Color(0xFF334D92),
+                    ),
+                    SizedBox(height: 8),
+                    SignInButton(
+                      key: emailPasswordButtonKey,
+                      text: Strings.signInWithEmailPassword,
+                      onPressed:
+                          isLoading ? null : () => _signInWithEmailAndPassword(context),
+                      textColor: Colors.white,
+                      color: Colors.teal[700],
+                    ),
+
+
+
+                  ],
+                ),
               ),
-              SizedBox(height: 8),
-            ],
-            SocialSignInButton(
-              key: googleButtonKey,
-              assetName: 'assets/go-logo.png',
-              text: Strings.signInWithGoogle,
-              onPressed: isLoading ? null : () => _signInWithGoogle(context),
-              color: Colors.white,
-            ),
-            SizedBox(height: 8),
-            SocialSignInButton(
-              key: facebookButtonKey,
-              assetName: 'assets/fb-logo.png',
-              text: Strings.signInWithFacebook,
-              textColor: Colors.white,
-              onPressed: isLoading ? null : () => _signInWithFacebook(context),
-              color: Color(0xFF334D92),
-            ),
-            SizedBox(height: 8),
-            SignInButton(
-              key: emailPasswordButtonKey,
-              text: Strings.signInWithEmailPassword,
-              onPressed:
-                  isLoading ? null : () => _signInWithEmailAndPassword(context),
-              textColor: Colors.white,
-              color: Colors.teal[700],
-            ),
-            SizedBox(height: 8),
-            SignInButton(
-              key: emailLinkButtonKey,
-              text: Strings.signInWithEmailLink,
-              onPressed: isLoading ? null : () => _signInWithEmailLink(context),
-              textColor: Colors.white,
-              color: Colors.blueGrey[700],
-            ),
-            SizedBox(height: 8),
-            Text(
-              Strings.or,
-              style: TextStyle(fontSize: 14.0, color: Colors.black87),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 8),
-            SignInButton(
-              key: anonymousButtonKey,
-              text: Strings.goAnonymous,
-              color: Colors.lime[300],
-              textColor: Colors.black87,
-              onPressed: isLoading ? null : () => _signInAnonymously(context),
-            ),
-          ],
+        ),
+        ],
         ),
       ),
     );

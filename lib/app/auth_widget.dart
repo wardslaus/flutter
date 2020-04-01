@@ -1,5 +1,6 @@
 import 'package:wardslaus/app/home_page.dart';
 import 'package:wardslaus/app/sign_in/sign_in_page.dart';
+import 'package:wardslaus/navigation_home_screen.dart';
 import 'package:wardslaus/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class AuthWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (userSnapshot.connectionState == ConnectionState.active) {
-      return userSnapshot.hasData ? HomePage() : SignInPageBuilder();
+      return userSnapshot.hasData ? NavigationHomeScreen() : SignInPageBuilder();
     }
     return Scaffold(
       body: Center(

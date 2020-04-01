@@ -1,23 +1,18 @@
-import 'dart:async';
-
-
-
+import 'file:///C:/Android/Live/wardslaus/lib/pages/app_theme.dart';
 import 'package:wardslaus/custom_drawer/drawer_user_controller.dart';
 import 'package:wardslaus/custom_drawer/home_drawer.dart';
-import 'package:wardslaus/pages/app_theme.dart';
 import 'package:wardslaus/pages/feedback_screen.dart';
 import 'package:wardslaus/pages/help_screen.dart';
 import 'package:wardslaus/pages/home_screen.dart';
 import 'package:wardslaus/pages/invite_friend_screen.dart';
 import 'package:flutter/material.dart';
 
-
-class HomePage extends StatefulWidget {
+class NavigationHomeScreen extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _NavigationHomeScreenState createState() => _NavigationHomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
   Widget screenView;
   DrawerIndex drawerIndex;
   AnimationController sliderAnimationController;
@@ -79,4 +74,3 @@ class _HomePageState extends State<HomePage> {
     }
   }
 }
-

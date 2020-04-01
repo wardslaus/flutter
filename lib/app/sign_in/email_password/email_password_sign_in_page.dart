@@ -152,7 +152,14 @@ class _EmailPasswordSignInPageState extends State<EmailPasswordSignInPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          SizedBox(height: 8.0),
+          ClipRRect(
+            borderRadius: new BorderRadius.circular(48.0),
+            child: Image(
+              fit: BoxFit.fill,
+              image: AssetImage('assets/logo.png'),
+              width: 180.0,
+            ),
+          ),
           _buildEmailField(),
           if (model.formType !=
               EmailPasswordSignInFormType.forgotPassword) ...<Widget>[
@@ -187,26 +194,36 @@ class _EmailPasswordSignInPageState extends State<EmailPasswordSignInPage> {
       ),
     );
   }
-
+//backgroundColor: Colors.grey[200],
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 2.0,
-        title: Text(model.title),
-      ),
-      backgroundColor: Colors.grey[200],
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Card(
-            child: Padding(
-              padding: EdgeInsets.all(16.0),
-              child: _buildContent(),
+    return  Container (
+      color:  Colors.white,
+      child: Column(
+      children: <Widget>[
+
+        SingleChildScrollView(
+
+              child: Card(
+                color: Colors.grey[100],
+                margin: new EdgeInsets.only(
+                    left: 20.0, right: 20.0, top: 35.0, bottom: 20.0),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
+                elevation: 8.0,
+                child: Padding(
+
+                  padding: EdgeInsets.only( left: 16.0, right: 16.0, top: 5.0, bottom: 16.0),
+
+                  child: _buildContent(),
+                ),
+              ),
             ),
-          ),
-        ),
+
+        ],
       ),
     );
+
+
   }
 }
